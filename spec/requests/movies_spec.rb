@@ -22,13 +22,13 @@ describe "get similar movies" do
 	end
 	
 	it "should return list of movies with matching directors" do
-		#assert @movie_list[0] == 'm1'
-		assert @movie_list[0] == 'm2'
+		assert @movie_list[0] == 'm1'
+		assert @movie_list[1] == 'm2'
 	end
 
 	it "should not return other directors" do
-		#assert @movie_list.length == 2
-		assert @movie_list.length == 1
+		assert @movie_list.length == 2
+		#assert @movie_list.length == 1
 	end
 end
 

@@ -29,9 +29,9 @@ class Movie < ActiveRecord::Base
 
   	title_list = Array.new  	
   	movie_list.each do |movie|
-  		if movie.title != movie_obj.title
-	  		title_list << movie.title
-	  	end
+  		#if movie.title != movie_obj.title
+	  	title_list << movie.title
+	  	#end
   	end
 
   	return title_list
