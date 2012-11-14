@@ -18,7 +18,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov'
   gem 'annotate'
-  #gem 'simplecov'
+  gem 'simplecov'
 end
 group :production do
   gem 'pg'
