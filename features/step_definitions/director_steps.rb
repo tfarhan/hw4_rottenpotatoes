@@ -53,11 +53,12 @@ end
 #end
 
 Then /^I should be on the home page$/ do
-	save_and_open_page
-	current_path.should eq(movie_path)
+	#save_and_open_page
+	#current_path.should eq(movie_path)
+	page.has_content? "All Movies"
 end
 
 And /^I should see "(.*)"$/ do |text|
-	save_and_open_page
+	#save_and_open_page
 	page.has_content? text
 end
