@@ -40,12 +40,11 @@ end
 When /^(.*) within (.*[^:]):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
-
+=begin
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-=begin
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -103,6 +102,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
+=begin
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)
@@ -120,6 +120,7 @@ Then /^(?:|I )should see \/([^\/]*)\/$/ do |regexp|
     assert page.has_xpath?('//*', :text => regexp)
   end
 end
+=end
 
 Then /^(?:|I )should not see "([^"]*)"$/ do |text|
   if page.respond_to? :should
@@ -227,7 +228,8 @@ Then /^the "([^"]*)" checkbox(?: within (.*))? should not be checked$/ do |label
     end
   end
 end
- 
+
+=begin
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
   if current_path.respond_to? :should
@@ -236,6 +238,7 @@ Then /^(?:|I )should be on (.+)$/ do |page_name|
     assert_equal path_to(page_name), current_path
   end
 end
+=end
 
 Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
